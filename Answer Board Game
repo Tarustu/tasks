@@ -1,0 +1,46 @@
+answer_game_board=[
+                    ["CAT","SEAL" ,"DOG", "PIG" ,"ELEPHANT"],
+                   ["FLY" ,"ELEPHANT", "FLY", "CAT", "FROG" ],
+                   [ "RABBIT" ,"GIRAFFE", "SWAN", "TURKEY", "FROG"],
+                   [ "DOG", "PIG" ,"BIRD", "BIRD" ,"SWAN"],
+                   ["SEAL" ,"TURKEY", "TOAD" ,"TOAD" ,"RABBIT"]
+]
+player_game_board=[["" for _ in range(5)] for _ in range(5)]
+
+
+def display_board(board):
+    for row in board:
+        print(" ".join(cell if cell else"_" for cell in row))
+def play_game():
+    pairs_found =0
+    total_pairs =12
+
+    while pairs_found<total_pairs:
+        display_board(player_game_board)
+
+
+        row1 = int(input("Enter the row of your fist word (0-4): "))
+        col1= int(input("Enter the column of your fist word (0-4): "))
+
+        player_game_board[row1][col1] = answer_game_board[row1][col1]
+        display_board(player_game_board)
+
+        row2 = int(input("Enter the row of your second word (0-4): "))
+        col2= int(input("Enter the column of your second word (0-4): "))
+
+        player_game_board[row2][col2] = answer_game_board[row2][col2]
+        display_board(player_game_board)
+
+        if answer_game_board[row1][col1]==answer_game_board[row2][col2]:
+            print("Its a match!!!!")
+            pair_found += 1
+        else:
+            print("not a match. Try again")
+
+            player_game_board[row1][col1]=""
+            player_game_board[row2][col2]=""
+
+    print("congratulationas! you've found all the pairs")
+
+play_game()
+            
