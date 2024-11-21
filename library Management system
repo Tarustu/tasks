@@ -1,0 +1,35 @@
+book1="blue lcock"
+book2="Harry potter"
+
+student1="alimusa"
+student2="pulkit"
+student1book=""
+student2book=""
+
+def takeout(student,book):
+    if student==student1:
+        global student1book
+        student1book= book
+    else:
+        student==student2
+        global student2book
+        student2book= book
+        
+
+
+def returnbook(student,book):
+    if student== student1:
+        student1book=""
+    else:
+        student2book=""
+
+def status():
+   
+    print(f"{student1} has {student1book}")
+    
+    print(f"{student2} has {student2book}")
+
+
+takeout("pulkit","harry potter")
+
+status()
