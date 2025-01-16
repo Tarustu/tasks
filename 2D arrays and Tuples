@@ -1,0 +1,25 @@
+staff = ["Mr Organ" , "Mrs Noor" , "Mr Ibrahim"]
+
+data = [[0,0,0],
+        [0,0,0],
+        [0,0,0],
+        [0,0,0]]
+
+#The columns represent the teachers
+#The rows represent the weeks
+
+for s in range (0, 3):
+    print (staff[s])
+    for d in range (0,4):
+        print (f"How much homework did you set in week {d+1}? ")
+        data [d][s] = int(input())
+
+
+for s in range (0, 3):
+    print (staff[s])
+    total = 0
+    for d in range (0,4):
+        print (f"Week {d+1} :: {data[d][s]} pieces of homework set ")
+        total += data[d][s]
+    print (f"The total homework set was {total}")
+
