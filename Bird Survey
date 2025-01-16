@@ -1,0 +1,21 @@
+birds = ["robin", "blackbird" , "pigeon", "magpie", "bluetit", "thrush" , "wren", "starling"]
+count = [0,0,0,0,0,0,0,0]
+eggs = [0,0,0,0,0,0,0,0]
+
+
+numberBirds = len(birds)
+
+birdName = input("Enter the bird name, use End to stop ")
+while birdName != "End":
+    for index in range (0,numberBirds):
+        if birds[index] == birdName:
+            numberSeen = int(input("How many birds did you see? "))
+            eggCount = int(input("How many eggs in the nest? "))
+            count[index] += numberSeen
+            eggs[index] += eggCount
+    birdName = input("Enter the bird name, use End to stop ")
+
+
+for index in range (0,numberBirds):
+    print (f"Bird: {birds[index]} {count[index]} seen and {eggs[index]} eggs seen")
+
